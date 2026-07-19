@@ -296,6 +296,19 @@ section {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+}
+
+.activity-writeup {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 900px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px 8px 8px 4px;
 }
 
 #activity-detail-content {

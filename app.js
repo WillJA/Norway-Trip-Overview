@@ -76,6 +76,19 @@ function initDetailView(gpxId, urlParams) {
     document.getElementById('activity-title').textContent = `Activity: ${gpxId}`;
   }
   
+  fetch('writeups.json')
+    .then(r => r.json())
+    .then(db => {
+      const writeup = db[gpxId];
+      const writeupEl = document.getElementById('activity-writeup');
+      if (writeupEl && writeup) {
+        writeupEl.textContent = writeup;
+      } else if (writeupEl) {
+        writeupEl.style.display = 'none';
+      }
+    })
+    .catch(err => console.log("No writeups.json found."));
+  
   fetch(`gpx/${gpxId}.gpx`)
     .then(response => response.text())
     .then(gpxData => {
