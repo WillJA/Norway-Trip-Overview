@@ -117,16 +117,23 @@ function fetchPhotos(gpxId, map) {
         const isVideo = p.filename.toUpperCase().endsWith('.MP4');
         
         if (isVideo) {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'video-thumbnail-wrapper';
+          wrapper.addEventListener('click', () => openLightbox(index));
+          
           const vid = document.createElement('video');
           vid.src = `images_web/${p.filename}`;
           vid.className = 'gallery-img'; 
-          vid.controls = false; // Disable controls so click works easily
+          vid.controls = false; 
           vid.preload = 'metadata';
-          vid.style.cursor = 'pointer';
-          vid.addEventListener('click', () => openLightbox(index));
           
-          // Optional: simple play indicator overlay could be added, but click plays in lightbox
-          gallery.appendChild(vid);
+          const icon = document.createElement('div');
+          icon.className = 'play-icon-overlay';
+          icon.innerHTML = '&#9654;'; // Play triangle
+          
+          wrapper.appendChild(vid);
+          wrapper.appendChild(icon);
+          gallery.appendChild(wrapper);
         } else {
           const img = document.createElement('img');
           img.src = `images_web/${p.filename}`;
@@ -199,6 +206,7 @@ function openLightbox(index) {
     imgEl.style.display = 'block';
   }
   
+  document.body.style.overflow = 'hidden'; // prevent scrolling behind lightbox
   lightbox.classList.remove('lightbox-hidden');
 }
 
@@ -206,6 +214,7 @@ function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   if (lightbox) {
     lightbox.classList.add('lightbox-hidden');
+    document.body.style.overflow = 'auto'; // restore scrolling
     document.getElementById('lightbox-video').pause();
   }
 }

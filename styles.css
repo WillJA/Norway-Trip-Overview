@@ -367,10 +367,54 @@ section {
 }
 
 #lightbox-img, #lightbox-video {
-  max-width: 100%;
+  max-width: 85vw;
   max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.video-thumbnail-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.video-thumbnail-wrapper .gallery-img {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.play-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding-left: 4px; /* visually center play triangle */
+  pointer-events: none;
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 #lightbox-close {
