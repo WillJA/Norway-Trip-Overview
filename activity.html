@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Detail | Norway 2026</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header class="detail-header">
+    <a href="index.html" class="back-button">← Back to Trip Report</a>
+    <h1 id="activity-title">Loading Activity...</h1>
+  </header>
+
+  <section id="activity-detail-content">
+    <div class="stats-grid" id="detail-stats" style="margin-bottom: 2rem; border: none;">
+      <div class="stat"><span class="stat-value" id="val-dist">--</span><span class="stat-label">km</span></div>
+      <div class="stat"><span class="stat-value" id="val-ele">--</span><span class="stat-label">m</span></div>
+    </div>
+
+    <!-- Interactive Map -->
+    <div class="map-container" id="detail-map" style="height: 500px; margin-bottom: 2rem;"></div>
+
+    <!-- Elevation Profile -->
+    <div class="elevation-container" style="height: 200px; margin-bottom: 3rem;">
+      <canvas id="detail-chart"></canvas>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="section-header">
+      <h2>Photos</h2>
+    </div>
+    <div class="photo-gallery" id="photo-gallery">
+      <!-- Photos injected via app.js -->
+    </div>
+  </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-hidden">
+        <span id="lightbox-close">&times;</span>
+        <button id="lightbox-prev" class="lightbox-btn">&#10094;</button>
+        <div id="lightbox-content-container">
+            <img id="lightbox-img" src="" alt="Fullscreen view" style="display:none;">
+            <video id="lightbox-video" src="" controls style="display:none;"></video>
+        </div>
+        <button id="lightbox-next" class="lightbox-btn">&#10095;</button>
+    </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

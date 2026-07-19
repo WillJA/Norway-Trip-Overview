@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norway 2026 | An Epic Through-Hike</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Norway 2026</h1>
+      <p>A 9-day through-hike across rugged terrain, boulder fields, and snowy summits, followed by spectacular runs in Åndalsnes.</p>
+    </div>
+    <div class="scroll-indicator">↓</div>
+  </header>
+
+  <!-- Through-Hike Section -->
+  <section id="through-hike">
+    <div class="section-header">
+      <h2>The Through-Hike</h2>
+    </div>
+    
+    <div class="activity-grid">
+      
+      <!-- Activity 1 -->
+      <div class="activity-card" data-gpx="19267750188">
+        <div class="activity-image" style="background-image: url('images/besseggen_ridge_1.jpg');"></div>
+        <div class="activity-content">
+          <span class="activity-date">July 6, 2026</span>
+          <h3 class="activity-title">Bessegen ridge hike</h3>
+          <p class="activity-desc">"Only find out afterwards it’s one of the most famous day hikes in Norway"</p>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">17.0</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">1,222</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">5:35</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19267750188"></div>
+            <div class="elevation-container"><canvas id="chart-19267750188"></canvas></div>
+            <a href="gpx/19267750188.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card" data-gpx="19267769911">
+        <!-- No image -->
+        <div class="activity-content">
+          <span class="activity-date">July 7, 2026</span>
+          <h3 class="activity-title">The one with a spicy descent</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">20.5</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">1,132</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">7:01</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19267769911"></div>
+            <div class="elevation-container"><canvas id="chart-19267769911"></canvas></div>
+            <a href="gpx/19267769911.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card" data-gpx="19267769892">
+        <div class="activity-image" style="background-image: url('images/boulders_1.jpg');"></div>
+        <div class="activity-content">
+          <span class="activity-date">July 8, 2026</span>
+          <h3 class="activity-title">Boulders and boulders and boulders</h3>
+          <p class="activity-desc">"Quite slow going at the end"</p>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">23.8</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">868</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">6:38</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19267769892"></div>
+            <div class="elevation-container"><canvas id="chart-19267769892"></canvas></div>
+            <a href="gpx/19267769892.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-card" data-gpx="19267777524">
+        <!-- No image -->
+        <div class="activity-content">
+          <span class="activity-date">July 9, 2026</span>
+          <h3 class="activity-title">10/10 camp spot</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">17.9</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">521</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">5:23</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19267777524"></div>
+            <div class="elevation-container"><canvas id="chart-19267777524"></canvas></div>
+            <a href="gpx/19267777524.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-card" data-gpx="19268524735">
+        <div class="activity-image" style="background-image: url('images/fannarykke_summit_1.jpg');"></div>
+        <div class="activity-content">
+          <span class="activity-date">July 10, 2026</span>
+          <h3 class="activity-title">Fannarykke summit day!</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">26.4</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">1,778</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">8:03</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19268524735"></div>
+            <div class="elevation-container"><canvas id="chart-19268524735"></canvas></div>
+            <a href="gpx/19268524735.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 6 -->
+      <div class="activity-card" data-gpx="19268955374">
+        <!-- No image -->
+        <div class="activity-content">
+          <span class="activity-date">July 11, 2026</span>
+          <h3 class="activity-title">Gentle descent followed by a fantastic burger</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">10.4</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">195</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">2:37</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19268955374"></div>
+            <div class="elevation-container"><canvas id="chart-19268955374"></canvas></div>
+            <a href="gpx/19268955374.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 7 -->
+      <div class="activity-card" data-gpx="19282590669">
+        <!-- No image -->
+        <div class="activity-content">
+          <span class="activity-date">July 11, 2026</span>
+          <h3 class="activity-title">Mosquito central</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">11.3</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">761</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">3:39</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19282590669"></div>
+            <div class="elevation-container"><canvas id="chart-19282590669"></canvas></div>
+            <a href="gpx/19282590669.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 8 -->
+      <div class="activity-card" data-gpx="19286138776">
+        <div class="activity-image" style="background-image: url('images/snow_boulders_1.jpg');"></div>
+        <div class="activity-content">
+          <span class="activity-date">July 12, 2026</span>
+          <h3 class="activity-title">Snow and boulder fields galore</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">18.9</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">1,125</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">6:18</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19286138776"></div>
+            <div class="elevation-container"><canvas id="chart-19286138776"></canvas></div>
+            <a href="gpx/19286138776.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 9 -->
+      <div class="activity-card" data-gpx="19299052232">
+        <div class="activity-image" style="background-image: url('images/snow_boulders_2.jpg');"></div>
+        <div class="activity-content">
+          <span class="activity-date">July 13, 2026</span>
+          <h3 class="activity-title">Last hike day - many boulder fields</h3>
+          <p class="activity-desc">"Now time for a much needed shower"</p>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">23.8</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">930</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">7:25</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19299052232"></div>
+            <div class="elevation-container"><canvas id="chart-19299052232"></canvas></div>
+            <a href="gpx/19299052232.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Åndalsnes Section -->
+  <section id="andalsnes">
+    <div class="section-header">
+      <h2>Åndalsnes</h2>
+    </div>
+    
+    <div class="activity-grid">
+      
+      <!-- Activity 10 -->
+      <div class="activity-card" data-gpx="19325016674">
+        <!-- No image -->
+        <div class="activity-content">
+          <span class="activity-date">July 15, 2026</span>
+          <h3 class="activity-title">Afternoon Trail Run</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">7.6</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">300</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">58</span><span class="stat-label">min</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19325016674"></div>
+            <div class="elevation-container"><canvas id="chart-19325016674"></canvas></div>
+            <a href="gpx/19325016674.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 11 -->
+      <div class="activity-card" data-gpx="19337166555">
+        <div class="activity-image" style="background-image: url('images/cloud_inversions_1.jpg');"></div>
+        <div class="activity-content">
+          <span class="activity-date">July 16, 2026</span>
+          <h3 class="activity-title">Cloud inversions and scrambles</h3>
+          <div class="stats-grid">
+            <div class="stat"><span class="stat-value">17.3</span><span class="stat-label">km</span></div>
+            <div class="stat"><span class="stat-value">1,547</span><span class="stat-label">m</span></div>
+            <div class="stat"><span class="stat-value">5:10</span><span class="stat-label">hrs</span></div>
+          </div>
+          <div class="native-embed">
+            <div class="map-container" id="map-19337166555"></div>
+            <div class="elevation-container"><canvas id="chart-19337166555"></canvas></div>
+            <a href="gpx/19337166555.gpx" download class="btn-download">Download GPX</a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>

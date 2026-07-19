@@ -1,0 +1,16 @@
+# Ignore original high-res images and large zip files
+images/
+*.zip
+*.HEIC
+*.MOV
+*.mov
+
+# Ignore Mac OS specific files
+.DS_Store
+
+# Ignore Python specific files
+__pycache__/
+*.pyc
+
+# Explicitly include the web-optimized images
+!images_web/
