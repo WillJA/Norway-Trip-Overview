@@ -304,7 +304,7 @@ section {
   line-height: 1.8;
   color: var(--text-secondary);
   max-width: 900px;
-  margin-bottom: 2rem;
+  margin: 0 auto 3rem auto;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.02);
   border-left: 4px solid var(--accent);
