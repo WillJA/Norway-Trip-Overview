@@ -311,6 +311,14 @@ section {
   border-radius: 4px 8px 8px 4px;
 }
 
+.activity-writeup p {
+  margin-bottom: 1rem;
+}
+
+.activity-writeup p:last-child {
+  margin-bottom: 0;
+}
+
 #activity-detail-content {
   padding: 0 10% 4rem;
   max-width: 1400px;

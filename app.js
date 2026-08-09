@@ -82,7 +82,7 @@ function initDetailView(gpxId, urlParams) {
       const writeup = db[gpxId];
       const writeupEl = document.getElementById('activity-writeup');
       if (writeupEl && writeup) {
-        writeupEl.textContent = writeup;
+        writeupEl.innerHTML = writeup;
       } else if (writeupEl) {
         writeupEl.style.display = 'none';
       }
